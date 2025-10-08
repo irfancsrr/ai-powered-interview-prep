@@ -14,17 +14,13 @@ const { generateInterviewQuestions, generateConceptExplanation } = require("./co
 const app = express();
 
 // Middleware to handle CORS
-app.use(cors());
-
-// Or, allow only your frontend domain (recommended for production)
-app.use(cors({
-    origin: "https://ai-powered-interview-prep-app-kizl.onrender.com",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-}));
-
-// Make sure to handle preflight requests
-app.options("*", cors());
+app.use(
+    cors({
+        origin:"*",
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
 
 connectDB();
 
