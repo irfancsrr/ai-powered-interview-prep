@@ -21,7 +21,7 @@ connectDB();
 // Middleware
 app.use(express.json());
 app.get('/',(req,res)=>{
-    res.send('hello this is interview-pre-ai  application');
+    res.send('hello this is interview-pre-ai  application \n');
 })
 // Routes
 
