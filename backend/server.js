@@ -24,6 +24,8 @@ app.get('/',(req,res)=>{
     res.send('hello this is interview-pre-ai');
 })
 // Routes
+
+
 app.use("/api/auth", authRoutes);
 app.use("/api/sessions", sessionRoutes);
 app.use("/api/questions", questionRoutes);
