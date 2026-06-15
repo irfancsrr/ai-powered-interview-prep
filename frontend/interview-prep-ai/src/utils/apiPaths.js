@@ -1,5 +1,7 @@
 // export const BASE_URL = "https://ai-powered-interview-app-backend.vercel.app/";
-export const BASE_URL = "http://localhost:5000/";
+// export const BASE_URL = "http://localhost:5000/";
+export const BASE_URL = "http://13.60.223.166:5000/";
+
 
 
 export const API_PATHS = {

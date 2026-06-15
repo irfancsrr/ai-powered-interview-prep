@@ -1,0 +1,26 @@
+name: ai-interview-app action file
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      
+      - name: deploy via ssh
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ubuntu
+          key: ${{secrets.SSH_KEY}}
+          script: |
+            cd /home/ubuntu/ai-interview-docker
+            sudo docker compose pull
+            sudo docker compose up -d
+            
